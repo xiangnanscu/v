@@ -1,9 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-// import { useRoute } from "vue-router";
+import { useRoute } from "vue-router";
 const route = useRoute();
 </script>
 <template>
-  <div>Home OK</div>
+  <router-link to="Test">Test</router-link>
   <RouterView />
 </template>
