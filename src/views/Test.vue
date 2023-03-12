@@ -1,7 +1,8 @@
-<script setup>
-// import { useRoute } from "vue-router";
-const route = useRoute();
-</script>
 <template>
-  <div>NOT OK</div>
+  <h1 class="logo">foo23</h1>
 </template>
+<style scoped>
+.logo {
+  color:red
+}
+</style>

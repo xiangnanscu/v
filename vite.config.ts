@@ -25,7 +25,7 @@ export default defineConfig({
       dts: "./src/unplugin/typed-router.d.ts",
       getRouteName: getPascalCaseRouteName,
       routeBlockLang: "json5",
-      importMode: "sync",
+      importMode: "async",
     }),
     AutoImport({
       //https://github.com/antfu/unplugin-auto-import#configuration
