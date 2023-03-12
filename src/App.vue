@@ -4,6 +4,6 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 </script>
 <template>
-  <router-link to="Test">Test</router-link>
+  <h1>Test Vite Bug</h1>
   <RouterView />
 </template>

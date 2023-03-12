@@ -7,6 +7,8 @@ import {
   getPascalCaseRouteName,
 } from "unplugin-vue-router";
 import AutoImport from 'unplugin-auto-import/vite'
+import Pages from "vite-plugin-pages";
+import Layouts from "vite-plugin-vue-layouts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,7 +21,6 @@ export default defineConfig({
     }),
     VueRouter({
       routesFolder: ["./src/views"],
-      // allowed extensions to be considered as routes
       extensions: [".vue"],
       exclude: [],
       dts: "./src/unplugin/typed-router.d.ts",
@@ -28,17 +29,15 @@ export default defineConfig({
       importMode: "async",
     }),
     AutoImport({
-      //https://github.com/antfu/unplugin-auto-import#configuration
       eslintrc: {
-        enabled: true, // Default `false`
-        filepath: "./src/unplugin/.eslintrc-auto-import.json", // Default `./.eslintrc-auto-import.json`
-        globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+        enabled: true,
+        filepath: "./src/unplugin/.eslintrc-auto-import.json",
+        globalsPropValue: true,
       },
       imports: [
         "vue",
         VueRouterAutoImports,
         { "vue-router/auto": ["useLink"] },
-        "@vueuse/core",
       ],
       dts: "./src/unplugin/auto-imports.d.ts",
       vueTemplate: true,
@@ -53,5 +52,7 @@ export default defineConfig({
         "./src/store/**", // all nested modules
       ],
     }),
-    vue()],
+    vue(),
+    Pages(),
+    Layouts({ layoutsDirs: "src/layouts", defaultLayout: 'default' }),],
 })

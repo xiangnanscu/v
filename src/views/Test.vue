@@ -1,5 +1,5 @@
 <template>
-  <h1 class="logo">foo23</h1>
+  <h1 class="logo">foo231</h1>
 </template>
 <style scoped>
 .logo {
